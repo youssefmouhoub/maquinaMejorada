@@ -6,6 +6,8 @@ public class MaquinaExpendedoraMejorada {
     private int balanceClienteActual;
     // El total de dinero almacenado en la maquina desde su ultimo vaciado
     private int totalDineroAcumulado;
+    // el numero de billetes vendidos
+    private int numeroDeBilletesVendidos;
     // El origen del billete
     private String estacionOrigen;
     // El destino del billete
@@ -20,6 +22,7 @@ public class MaquinaExpendedoraMejorada {
         precioBillete = precioDelBillete;
         balanceClienteActual = 0;
         totalDineroAcumulado = 0;
+        numeroDeBilletesVendidos = 0;
         estacionOrigen = origen;
         estacionDestino = destino;
     }
@@ -69,10 +72,12 @@ public class MaquinaExpendedoraMejorada {
             totalDineroAcumulado = totalDineroAcumulado + precioBillete;
             // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
             balanceClienteActual = balanceClienteActual - precioBillete;
+            // Calcula el numero de billetes
+            numeroDeBilletesVendidos = numeroDeBilletesVendidos + 1;
         }
         else {
             System.out.println("Necesitas introducir " + cantidadDeDineroQueFalta + " euros mas!");
-            
+
         }            
     }
 
@@ -86,21 +91,26 @@ public class MaquinaExpendedoraMejorada {
         balanceClienteActual = 0;
         return cantidadDeDineroADevolver;
     }
-    
+
     /**
      * vaciar dinero
      */
     public int vaciarDineroDeLaMaquina(){
         int totalDineroExtraido = balanceClienteActual + totalDineroAcumulado;
         if (balanceClienteActual == 0) {
-        balanceClienteActual = 0;
-        totalDineroAcumulado = 0;
+            balanceClienteActual = 0;
+            totalDineroAcumulado = 0;
         }
         else {
             System.out.println("Error: ");
             totalDineroExtraido = -1;
-      }
-        
+        }
+
         return totalDineroExtraido;
+    }
+
+
+    public int getNumeroBilletesVendidos() {
+        return numeroDeBilletesVendidos;
     }
 }
