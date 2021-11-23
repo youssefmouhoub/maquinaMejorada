@@ -96,6 +96,10 @@ public class MaquinaExpendedoraMejorada {
         balanceClienteActual = 0;
         totalDineroAcumulado = 0;
         }
+        else {
+            System.out.println("Error: ");
+            totalDineroExtraido = -1;
+      }
         
         return totalDineroExtraido;
     }
