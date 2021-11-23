@@ -113,4 +113,8 @@ public class MaquinaExpendedoraMejorada {
     public int getNumeroBilletesVendidos() {
         return numeroDeBilletesVendidos;
     }
+    
+    public void imprimeBilletesVendidos () {
+        System.out.println ("Número de billetes vendidos: "+ numeroDeBilletesVendidos);
+    }
 }
