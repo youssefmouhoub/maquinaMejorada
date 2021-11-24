@@ -55,7 +55,7 @@ public class MaquinaExpendedoraMejorada {
             System.out.println(cantidadIntroducida + " no es una cantidad de dinero valida.");
         }        
     }
-    
+
     /**
      * Imprime un billete para el cliente actual
      */
@@ -64,22 +64,22 @@ public class MaquinaExpendedoraMejorada {
         cantidadDeDineroQueFalta = precioBillete - balanceClienteActual;
         if (cantidadDeDineroQueFalta <= 0) { 
             // Simula la impresion de un billete
-                System.out.println("##################");
-                System.out.println("# Billete de tren:");
-                System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
-                System.out.println("# " + precioBillete + " euros.");
-                System.out.println("# CantidadDeDineroQueFalta: " + cantidadDeDineroQueFalta);
-                System.out.println("##################");       
+            System.out.println("##################");
+            System.out.println("# Billete de tren:");
+            System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
+            System.out.println("# " + precioBillete + " euros.");
+            System.out.println("# CantidadDeDineroQueFalta: " + cantidadDeDineroQueFalta);
+            System.out.println("##################");       
 
-                // Actualiza el total de dinero acumulado en la maquina
-                totalDineroAcumulado = totalDineroAcumulado + precioBillete;
-                // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
-                balanceClienteActual = balanceClienteActual - precioBillete;
-                // Calcula el numero de billetes
-                numeroDeBilletesVendidos = numeroDeBilletesVendidos + 1;
-         
-            if (imprimirBilletesConPremio = true) {
-                System.out.println("¡Tiene un Discuendo de " + precioBillete / 10 + " Euros para compras!");
+            // Actualiza el total de dinero acumulado en la maquina
+            totalDineroAcumulado = totalDineroAcumulado + precioBillete;
+            // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
+            balanceClienteActual = balanceClienteActual - precioBillete;
+            // Calcula el numero de billetes
+            numeroDeBilletesVendidos = numeroDeBilletesVendidos + 1;
+
+            if (imprimirBilletesConPremio == true) {
+                System.out.println("¡Tiene un Discuento de " + precioBillete / 10 + " Euros para compras!");
             }
         }
         else {
