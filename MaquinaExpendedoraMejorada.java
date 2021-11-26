@@ -8,6 +8,8 @@ public class MaquinaExpendedoraMejorada {
     private int totalDineroAcumulado;
     // el numero de billetes vendidos
     private int numeroDeBilletesVendidos;
+    //
+    private int cantidadDeBilletesQueQuedanPorVenderParaDarElPremio;
     // El origen del billete
     private String estacionOrigen;
     // El destino del billete
@@ -31,6 +33,7 @@ public class MaquinaExpendedoraMejorada {
         estacionDestino = destino;
         imprimirBilletesConPremio = billetesConPremio;
         numMaxBilletes = enterNumMaxBilletes;
+        cantidadDeBilletesQueQuedanPorVenderParaDarElPremio = 3;
     }
 
     /**
@@ -87,8 +90,10 @@ public class MaquinaExpendedoraMejorada {
                 balanceClienteActual = balanceClienteActual - precioBillete;
                 // Calcula el numero de billetes
                 numeroDeBilletesVendidos = numeroDeBilletesVendidos + 1;
+                //
+                cantidadDeBilletesQueQuedanPorVenderParaDarElPremio = cantidadDeBilletesQueQuedanPorVenderParaDarElPremio - 1;
 
-                if (imprimirBilletesConPremio == true) {
+                if (cantidadDeBilletesQueQuedanPorVenderParaDarElPremio == 0) {
                     System.out.println("¡Tiene un Discuento de " + precioBillete / 10 + " Euros para compras!");
                 }
             }
