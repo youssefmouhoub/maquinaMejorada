@@ -95,6 +95,7 @@ public class MaquinaExpendedoraMejorada {
 
                 if (cantidadDeBilletesQueQuedanPorVenderParaDarElPremio == 0) {
                     System.out.println("¡Tiene un Discuento de " + precioBillete / 10 + " Euros para compras!");
+                    cantidadDeBilletesQueQuedanPorVenderParaDarElPremio = 3;
                 }
             }
             else {
